@@ -177,7 +177,7 @@ function* generate_pattern_0_with_lengths(given_prices, high_phase_1_len, dec_ph
     });
   }
   yield {
-    pattern_description: "high, decreasing, high, decreasing, high",
+    pattern_description: "波型",
     pattern_number: 0,
     prices: predicted_prices
   };
@@ -285,7 +285,7 @@ function* generate_pattern_1_with_peak(given_prices, peak_start) {
     });
   }
   yield {
-    pattern_description: "decreasing, high spike, random lows",
+    pattern_description: "三期型",
     pattern_number: 1,
     prices: predicted_prices
   };
@@ -351,7 +351,7 @@ function* generate_pattern_2(given_prices) {
     max_rate -= 300;
   }
   yield {
-    pattern_description: "always decreasing",
+    pattern_description: "遞減型",
     pattern_number: 2,
     prices: predicted_prices
   };
@@ -531,7 +531,7 @@ function* generate_pattern_3_with_peak(given_prices, peak_start) {
   }
 
   yield {
-    pattern_description: "decreasing, spike, decreasing",
+    pattern_description: "四期型",
     pattern_number: 3,
     prices: predicted_prices
   };
@@ -582,7 +582,7 @@ function analyze_possibilities(sell_prices) {
   }
 
   generated_possibilities.push({
-    pattern_description: "predicted min/max across all patterns",
+    pattern_description: "所有模式的預計最小~最大",
     pattern_number: 4,
     prices: global_min_max,
   });

@@ -1,10 +1,10 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="zh-TW">
 <head>
   <meta charset="utf-8">
 
-  <title>Animal Crossing Turnip Price Forecaster</title>
+  <title>動物之森大頭菜價格預測器</title>
   <meta name="description" content="Animal Crossing Turnip Price Forecaster">
   <meta name="author" content="Mike Bryant">
 
@@ -13,15 +13,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162470902-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-19433453-7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-162470902-1');
+    gtag('config', 'UA-19433453-7');
   </script>
-
 </head>
 
 <body>
@@ -29,27 +28,29 @@
     <div class="col s12 m5">
       <div class="card-panel z-depth-0">
         <span>
-          To use, enter as much data as you can from <b>your own island</b>. If you bought from Daisy on your own island <b>for the first time this week</b> leave the buy price blank. The tool will figure out all possible patterns and predict the lowest and highest prices for each day.
+          請從<b>您自己</b>的島嶼中輸入盡可能多的數據。遊戲中第一週的菜價與你的基礎價格無關，<b>所以你如果是在遊戲的第一週</b>，請將購買價格留空。工具將找出所有可能的模式，並預測每天的最低和最高價格。
           <p />
-          I couldn't have done this without <a href="https://twitter.com/_Ninji/status/1244818665851289602?s=20">Ninji's work extracting the code</a>
+          如果沒有 <a href="https://twitter.com/_Ninji/status/1244818665851289602?s=20">Ninji's 解析程式碼</a> 此專案無法完成
           <p />
-          Support, comments and contributions are available through <a href="https://github.com/mikebryant/ac-nh-turnip-prices/issues">Github</a>
+          可以通過 <a href="https://github.com/mikebryant/ac-nh-turnip-prices/issues">Github</a> 獲得支持，評論和貢獻
+          <p />
+          Pupu Fork From <a href="https://github.com/mikebryant/ac-nh-turnip-prices/issues">mikebryant</a>
         </span>
       </div>
     </div>
     <form>
       <div class="row">
         <div class="col s2">
-          <h5>Daisy Mae</h5>
+          <h5>大頭菜</h5>
           <div class="input-field">
-            <label for="buy">Buy price</label>
+            <label for="buy">買入價格</label>
             <input type="number" id="buy">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col s2">
-          <h6>Monday</h6>
+          <h6>星期一</h6>
           <div class="input-field col s6">
             <label for="sell_2">AM</label>
             <input type="number" id="sell_2">
@@ -60,7 +61,7 @@
           </div>
         </div>
         <div class="col s2">
-          <h6>Tuesday</h6>
+          <h6>星期二</h6>
           <div class="input-field col s6">
             <label for="sell_4">AM</label>
             <input type="number" id="sell_4">
@@ -71,7 +72,7 @@
           </div>
         </div>
         <div class="col s2">
-          <h6>Wednesday</h6>
+          <h6>星期三</h6>
           <div class="input-field col s6">
             <label for="sell_6">AM</label>
             <input type="number" id="sell_6">
@@ -82,7 +83,7 @@
           </div>
         </div>
         <div class="col s2">
-          <h6>Thursday</h6>
+          <h6>星期四</h6>
           <div class="input-field col s6">
             <label for="sell_8">AM</label>
             <input type="number" id="sell_8">
@@ -93,7 +94,7 @@
           </div>
         </div>
         <div class="col s2">
-          <h6>Friday</h6>
+          <h6>星期五</h6>
           <div class="input-field col s6">
             <label for="sell_10">AM</label>
             <input type="number" id="sell_10">
@@ -104,7 +105,7 @@
           </div>
         </div>
         <div class="col s2">
-          <h6>Saturday</h6>
+          <h6>星期六</h6>
           <div class="input-field col s6">
             <label for="sell_12">AM</label>
             <input type="number" id="sell_12">
@@ -118,7 +119,7 @@
       <div class="row">
         <div class="col s12">
           <button id="reset" class="btn waves-effect waves-light" type="submit" name="action">
-            Reset
+            清除
           </button>
         </div>
       </div>
@@ -127,23 +128,23 @@
     <div class="divider"></div>
 
     <div class="card-panel z-depth-0">
-        <span>Your turnip prices will be one of the following patterns. Each cell contains the minimum..maximum price for that half-day. If you don't have a pattern, something's gone wrong, sorry &#128531;. Check back next week!</span>
+        <span>您的蘿蔔價格將是以下幾種模式之一。 每個價格包含該半天的最低..最高價格。 如果您沒有出現模式，可能是出了點問題，對不起 &#128531;。 下週再回來看看！</span>
     </div>
 
     <div class="section">
       <table id="turnipTable" class="responsive-table highlight">
         <thead>
           <tr>
-            <th rowspan="2">Pattern</th>
-            <th rowspan="2">Sunday</th>
-            <th colspan="2">Monday</th>
-            <th colspan="2">Tuesday</th>
-            <th colspan="2">Wednesday</th>
-            <th colspan="2">Thursday</th>
-            <th colspan="2">Friday</th>
-            <th colspan="2">Saturday</th>
-            <th rowspan="2">Week Min</th>
-            <th rowspan="2">Week Max</th>
+            <th rowspan="2">模式</th>
+            <th rowspan="2">週日</th>
+            <th colspan="2">周一</th>
+            <th colspan="2">周二</th>
+            <th colspan="2">周三</th>
+            <th colspan="2">周四</th>
+            <th colspan="2">周五</th>
+            <th colspan="2">周六</th>
+            <th rowspan="2">最小值</th>
+            <th rowspan="2">最大值</th>
           </tr>
           <tr>
             <th>AM</th>
