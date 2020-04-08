@@ -543,26 +543,29 @@ function* generate_pattern_3(given_prices) {
   }
 }
 
-
-function* generate_possibilities(sell_prices) {
-  if (!isNaN(sell_prices[0])) {
+function* generate_possibilities(sell_prices, first_buy) {
+  if (first_buy || isNaN(sell_prices[0])) {
+    for (var buy_price = 90; buy_price <= 110; buy_price++) {
+      sell_prices[0] = sell_prices[1] = buy_price;
+      if (first_buy) {
+        yield* generate_pattern_3(sell_prices);
+      } else {
     yield* generate_pattern_0(sell_prices);
     yield* generate_pattern_1(sell_prices);
     yield* generate_pattern_2(sell_prices);
     yield* generate_pattern_3(sell_prices);
+      }
+    }
   } else {
-    for (var buy_price = 90; buy_price < 110; buy_price++) {
-      sell_prices[0] = sell_prices[1] = buy_price;
       yield* generate_pattern_0(sell_prices);
       yield* generate_pattern_1(sell_prices);
       yield* generate_pattern_2(sell_prices);
       yield* generate_pattern_3(sell_prices);
     }
   }
-}
 
-function analyze_possibilities(sell_prices) {
-  generated_possibilities = Array.from(generate_possibilities(sell_prices));
+function analyze_possibilities(sell_prices, first_buy) {
+  generated_possibilities = Array.from(generate_possibilities(sell_prices, first_buy));
 
   global_min_max = [];
   for (var day = 0; day < 14; day++) {
@@ -590,7 +593,7 @@ function analyze_possibilities(sell_prices) {
   for (let poss of generated_possibilities) {
     var weekMins = [];
     var weekMaxes = [];
-    for (let day of poss.prices.slice(1)) {
+    for (let day of poss.prices.slice(2)) {
       weekMins.push(day.min);
       weekMaxes.push(day.max);
     }
