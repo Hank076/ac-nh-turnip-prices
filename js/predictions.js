@@ -648,7 +648,7 @@ function analyze_possibilities(sell_prices, first_buy, previous_pattern) {
   }
 
   generated_possibilities.push({
-    pattern_description: "所有模式",
+    pattern_description: "所有型態",
     pattern_number: 4,
     prices: global_min_max,
   });
