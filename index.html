@@ -1,18 +1,18 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Animal Crossing - Turnip Prophet</title>
-  <meta name="description" content="Animal Crossing - Turnip Prophet">
+  <title>動物之森 - 大頭菜價格預測程式</title>
+  <meta name="description" content="動物之森 - 大頭菜價格預測程式">
   <meta name="author" content="Mike Bryant">
 
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162470902-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-19433453-7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -21,7 +21,7 @@
     }
     gtag('js', new Date());
 
-    gtag('config', 'UA-162470902-1');
+    gtag('config', 'UA-19433453-7');
   </script>
 
 </head>
@@ -30,17 +30,16 @@
 <body>
 
   <div class="dialog-box">
-    <h2 class="dialog-box__name">Daisy Mae</h2>
-    <p>Hello, and welcome to the <b>Turnip Prophet</b> app on your Nook Phone.</p>
-    <p>This app lets you track your island's turnip prices daily, but you'll have to put the prices in yourself!
+    <h2 class="dialog-box__name">曹賣</h2>
+    <p>你好，歡迎使用Nook手機上的 <b>大頭菜價格預測機</b> 程式。</p>
+    <p>這個程式可以讓你每天追蹤你島上的大頭菜價格，但你必須自己記錄價格！
     </p>
-    <p>After that, the Turnip Prophet app will <b>magically</b> predict the turnip prices you'll have for the rest of
-      the week.
+    <p>之後，大頭菜價格預測程式將 <b>神奇地</b> 預測本週剩餘時間的大頭菜價格。
     </p>
   </div>
 
   <div class="nook-phone">
-    <h1>Turnip Prophet</h1>
+    <h1>大頭菜價格預測</h1>
 
     <div>
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -63,43 +62,41 @@
 
       <form class="input__form">
         <div class="form__row">
-          <h6>First-Time Buyer</h6>
+          <h6>首次購買</h6>
           <div class="input__group">
-            <label>Is this your first time buying turnips from Daisy Mae on your island?<i>(This affects your
-                pattern)</i></label>
+            <label>這是您第一次從島上的曹賣購買大頭菜嗎？<i>(這會影響您這次的型態)</i></label>
             <div class="input__radio-buttons">
               <input type="radio" id="first-time-radio-no" name="first-time" value="false" checked>
-              <label for="first-time-radio-no">No</label>
+              <label for="first-time-radio-no">否</label>
               <input type="radio" id="first-time-radio-yes" name="first-time" value="true">
-              <label for="first-time-radio-yes">Yes</label>
+              <label for="first-time-radio-yes">是</label>
             </div>
           </div>
         </div>
 
         <div class="form__row">
-          <h6>Previous Pattern</h6>
+          <h6>上次的型態</h6>
           <div class="input__group">
-            <label for="">What was last week's turnip price pattern?<i>(This affects your pattern)</i></label>
+            <label for="">上週的大頭菜價格型態如何？<i>(這會影響您這次的型態)</i></label>
             <div class="input__radio-buttons">
               <input type="radio" id="pattern-radio-unknown" name="pattern" value="-1" checked>
-              <label for="pattern-radio-unknown">I don't know</label>
+              <label for="pattern-radio-unknown">不知道</label>
               <input type="radio" id="pattern-radio-fluctuating" name="pattern" value="0">
-              <label for="pattern-radio-fluctuating">Fluctuating</label>
+              <label for="pattern-radio-fluctuating">波型</label>
               <input type="radio" id="pattern-radio-small-spike" name="pattern" value="3">
-              <label for="pattern-radio-small-spike">Small Spike</label>
+              <label for="pattern-radio-small-spike">第四期型</label>
               <input type="radio" id="pattern-radio-large-spike" name="pattern" value="1">
-              <label for="pattern-radio-large-spike">Large Spike</label>
+              <label for="pattern-radio-large-spike">第三期型</label>
               <input type="radio" id="pattern-radio-decreasing" name="pattern" value="2">
-              <label for="pattern-radio-decreasing">Decreasing</label>
+              <label for="pattern-radio-decreasing">遞減型</label>
             </div>
           </div>
         </div>
 
         <div class="form__row">
-          <h6>Sunday</h6>
+          <h6>星期日</h6>
           <div class="input__group">
-            <label>What was the price of turnips this week? <i>(If this is your first time buying turnips, this field
-                will be disabled)</i></label>
+            <label>本週大頭菜的購買價格是多少？<i>(如果這是您第一次購買大頭菜，則此欄位會被停用)</i></label>
             <input type="number" id="buy" placeholder="..." />
 
           </div>
@@ -109,7 +106,7 @@
         <i>PM - 12:00 pm to 10:00 pm</i>
         <div class="form__flex-wrap">
           <div class="form__row">
-            <h6>Monday</h6>
+            <h6>星期一</h6>
             <div class="input__group">
               <label for="sell_2">AM</label>
               <input type="number" id="sell_2" placeholder="..." />
@@ -121,7 +118,7 @@
           </div>
 
           <div class="form__row">
-            <h6>Tuesday</h6>
+            <h6>星期二</h6>
             <div class="input__group">
               <label for="sell_4">AM</label>
               <input type="number" id="sell_4" placeholder="..." />
@@ -133,7 +130,7 @@
           </div>
 
           <div class="form__row">
-            <h6>Wednesday</h6>
+            <h6>星期三</h6>
             <div class="input__group">
               <label for="sell_6">AM</label>
               <input type="number" id="sell_6" placeholder="..." />
@@ -145,7 +142,7 @@
           </div>
 
           <div class="form__row">
-            <h6>Thursday</h6>
+            <h6>星期四</h6>
             <div class="input__group">
               <label for="sell_8">AM</label>
               <input type="number" id="sell_8" placeholder="..." />
@@ -157,7 +154,7 @@
           </div>
 
           <div class="form__row">
-            <h6>Friday</h6>
+            <h6>星期五</h6>
             <div class="input__group">
               <label for="sell_10">AM</label>
               <input type="number" id="sell_10" placeholder="..." />
@@ -169,7 +166,7 @@
           </div>
 
           <div class="form__row">
-            <h6>Saturday</h6>
+            <h6>星期六</h6>
             <div class="input__group">
               <label for="sell_12">AM</label>
               <input type="number" id="sell_12" placeholder="..." />
@@ -181,30 +178,30 @@
           </div>
         </div>
         <button id="reset" class="reset-button" name="action">
-          Reset Turnip Prophet
+          清除資料
         </button>
       </form>
 
 
 
-      <h2>Output</h2>
+      <h2>結果</h2>
 
       <div class="table-wrapper">
         <table id="turnipTable">
           <thead>
             <tr>
-              <th valign="bottom">Pattern</th>
-              <th valign="bottom">% Chance</th>
-              <th valign="bottom">Sunday</th>
+              <th valign="bottom">型態</th>
+              <th valign="bottom">機率(%)</th>
+              <th valign="bottom">星期日</th>
               <th colspan="2">
-                <div>Monday</div>
+                <div>星期一</div>
                 <div>
                   <span>AM</span>
                   <span>PM</span>
                 </div>
               </th>
               <th colspan="2">
-                <div>Tuesday</div>
+                <div>星期二</div>
                 <div>
                   <span>AM</span>
                   <span>PM</span>
@@ -212,7 +209,7 @@
               </th>
               <th colspan="2">
                 <div>
-                  <div>Wednesday</div>
+                  <div>星期三</div>
                   <div>
                     <span>AM</span>
                     <span>PM</span>
@@ -220,28 +217,28 @@
                 </div>
               </th>
               <th colspan="2">
-                <div>Thursday</div>
+                <div>星期四</div>
                 <div>
                   <span>AM</span>
                   <span>PM</span>
                 </div>
               </th>
               <th colspan="2">
-                <div>Friday</div>
+                <div>星期五</div>
                 <div>
                   <span>AM</span>
                   <span>PM</span>
                 </div>
               </th>
               <th colspan="2">
-                <div>Saturday</div>
+                <div>星期六</div>
                 <div>
                   <span>AM</span>
                   <span>PM</span>
                 </div>
               </th>
-              <th valign="bottom">Guaranteed Minimum</th>
-              <th valign="bottom">Potential Maximum</th>
+              <th valign="bottom">最低保證</th>
+              <th valign="bottom">最高可能</th>
             </tr>
           </thead>
           <tbody id="output"></tbody>
@@ -267,28 +264,30 @@
   </div>
 
   <div class="dialog-box">
-    <h2 class="dialog-box__name">Daisy Mae</h2>
-    <p>After you've listed some turnip prices, the Turnip Prophet will run some numbers and display the different
-      possible patterns that your island may experience.</p>
-    <p>This app is still in development, but will improve over time!</p>
+    <h2 class="dialog-box__name">曹賣</h2>
+    <p>在您紀錄了一些大頭菜價格之後，預測程式會運行運算，
+      並顯示你所在島嶼可能出現的不同型態。</p>
+    <p>此程式仍在開發中，但會隨著時間的推移而改善！</p>
   </div>
 
   <div class="dialog-box">
-    <h2 class="dialog-box__name">Daisy Mae</h2>
+    <h2 class="dialog-box__name">曹賣</h2>
     <p>
-      None of this would have been possible without <a
-        href="https://twitter.com/_Ninji/status/1244818665851289602?s=20">Ninji's work</a> figuring out just how Timmy
-      and Tommy value their turnips.
+      如果沒有<a href="https://twitter.com/_Ninji/status/1244818665851289602?s=20">Ninji 的幫忙</a> 
+      來弄清楚 豆狸 和 粒狸 如何對他們的大頭菜的估價，那麼這一切都是不可能的。
     </p>
     <p>
-      Support, comments and contributions are available through <a
-        href="https://github.com/mikebryant/ac-nh-turnip-prices/issues">Github</a>
+      可透過 <a href="https://github.com/mikebryant/ac-nh-turnip-prices/issues">Github</a> 
+      獲得支援, 討論及貢獻  
+    </p>
+    <p>
+      Pupu Fork From <a target="_blank" href="https://turnipprophet.io/index.html">mikebryant</a> 
     </p>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="js/predictions.js"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/predictions.js?r=202004100930"></script>
+  <script src="js/scripts.js?r=202004100930"></script>
 </body>
 
 </html>
