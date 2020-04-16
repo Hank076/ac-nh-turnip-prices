@@ -22,17 +22,17 @@ function update_chart(input_data, possibilities) {
 
   datasets = [
     {
-      label: "Input Price",
+      label: "輸入的價格",
       data: input_data.slice(1),
       fill: false,
     },
     {
-      label: "Minimum",
+      label: "最低價",
       data: possibilities[0].prices.slice(1).map(day => day.min),
       fill: false,
     },
     {
-      label: "Maximum",
+      label: "最高價",
       data: possibilities[0].prices.slice(1).map(day => day.max),
       fill: "-1",
     },
@@ -45,7 +45,7 @@ function update_chart(input_data, possibilities) {
     chart_instance = new Chart(ctx, {
       data: {
         datasets: datasets,
-        labels: ["Sunday", "Mon AM", "Mon PM", "Tue AM", "Tue PM", "Wed AM", "Wed PM", "Thu AM", "Thu PM", "Fri AM", "Fri PM", "Sat AM", "Sat PM"],
+        labels: ["週日", "週一上", "週一下", "週二上", "週二下", "週三上", "週三下", "週四上", "週四下", "週五上", "週五下", "週六上", "週六下"],
       },
       options: chart_options,
       type: "line",
