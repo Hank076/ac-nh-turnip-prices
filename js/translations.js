@@ -7,7 +7,7 @@ i18next
   .use(i18nextXHRBackend)
   .use(i18nextBrowserLanguageDetector)
   .init({
-    fallbackLng: 'en',
+    fallbackLng: 'zh-TW',
     debug: true,
     backend: {
       loadPath: 'locales/{{lng}}.json',
