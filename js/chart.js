@@ -22,17 +22,17 @@ function update_chart(input_data, possibilities) {
 
   datasets = [
     {
-      label: "輸入的價格",
+      label: i18next.t("output.chart.input"),
       data: input_data.slice(1),
       fill: false,
     },
     {
-      label: "最低價",
+      label: i18next.t("output.chart.minimum"),
       data: possibilities[0].prices.slice(1).map(day => day.min),
       fill: false,
     },
     {
-      label: "最高價",
+      label: i18next.t("output.chart.maximum"),
       data: possibilities[0].prices.slice(1).map(day => day.max),
       fill: "-1",
     },
@@ -45,7 +45,7 @@ function update_chart(input_data, possibilities) {
     chart_instance = new Chart(ctx, {
       data: {
         datasets: datasets,
-        labels: ["週日", "週一上", "週一下", "週二上", "週二下", "週三上", "週三下", "週四上", "週四下", "週五上", "週五下", "週六上", "週六下"],
+        labels: [i18next.t("weekdays.sunday"), i18next.t("weekdays.abr.monday") + " " + i18next.t("times.morning"), i18next.t("weekdays.abr.monday") + " " + i18next.t("times.afternoon"), i18next.t("weekdays.abr.tuesday") + " " + i18next.t("times.morning"), i18next.t("weekdays.abr.tuesday") + " " + i18next.t("times.afternoon"), i18next.t("weekdays.abr.wednesday") + " " + i18next.t("times.morning"), i18next.t("weekdays.abr.wednesday") + " " + i18next.t("times.afternoon"), i18next.t("weekdays.abr.thursday") + " " + i18next.t("times.morning"), i18next.t("weekdays.abr.thursday") + " " + i18next.t("times.afternoon"), i18next.t("weekdays.abr.friday") + " " + i18next.t("times.morning"), i18next.t("weekdays.abr.friday") + " " + i18next.t("times.afternoon"), i18next.t("weekdays.abr.saturday") + " " + i18next.t("times.morning"), i18next.t("weekdays.abr.saturday") + " " + i18next.t("times.afternoon")],
       },
       options: chart_options,
       type: "line",
