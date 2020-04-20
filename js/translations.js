@@ -2,7 +2,7 @@ function updateContent() {
   update();
   $('body').localize();
 }
-const defaultLanguage = 'en';
+const defaultLanguage = 'zh-TW';
 i18next
 .use(i18nextXHRBackend)
 .use(i18nextBrowserLanguageDetector)
