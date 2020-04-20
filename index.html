@@ -52,7 +52,7 @@
   </div>
 
   <div class="nook-phone">
-    <h1 data-i18n="general.name"></h1>
+    <h1>Turnip Prophet</h1>
 
     <div>
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -189,7 +189,7 @@
             </div>
           </div>
         </div>
-        <input id="permalink-input" type="text" />
+        <input id="permalink-input" type="text" readOnly />
         <div id="permalink-btn" class="button permalink">
           <span data-i18n="prices.copy-permalink"></span>
           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" class="svg-inline--fa fa-copy fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -212,7 +212,7 @@
           <thead>
             <tr>
               <th valign="bottom" data-i18n="patterns.pattern"></th>
-              <th valign="bottom" data-i18n="output.chance"></th>
+              <th colspan="2" valign="bottom" data-i18n="output.chance"></th>
               <th valign="bottom" data-i18n="weekdays.sunday"></th>
               <th colspan="2">
                 <div data-i18n="weekdays.monday"></div>
@@ -315,9 +315,10 @@
     <p data-i18n="[html]textbox.thanks"></p>
     <p data-i18n="[html]textbox.support"></p>
     <p data-i18n="textbox.contributors-text"></p>
-    <p id="contributors">
-      Contributors:
-    </p>
+    <p id="contributors"><span data-i18n="textbox.contributors"></span>: </p>
+    <div class="dialog-box-lng">
+      <p data-i18n="textbox.language"></p>: <select id="language"></select>
+    </div>
   </div>
 
   <div id="snackbar">Some text some message...</div>
@@ -329,9 +330,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/4.0.2/i18nextBrowserLanguageDetector.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js"></script>
   <script src="js/chart.js"></script>
-  <script src="js/translations.js"></script>
   <script src="js/predictions.js"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/translations.js"></script>
   <script src="js/contributors.js"></script>
   <script>
     // Check compatibility for the browser we're running this in
@@ -356,5 +357,4 @@
     }
   </script>
 </body>
-
 </html>
