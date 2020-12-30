@@ -83,5 +83,9 @@
       "light": "亮色",
       "dark": "暗色"
     }
+  },
+  "errors": {
+    "impossible-values": "糟糕！ 您的大頭菜預測結果似乎有誤。 請檢查您輸入的資料。",
+    "github": "如果您的大頭菜價格正確且沒有時間旅行，請 <a href=\"https://github.com/mikebryant/ac-nh-turnip-prices/issues\">回報問題</a>。"
   }
 }
