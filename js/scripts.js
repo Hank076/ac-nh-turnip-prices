@@ -1,8 +1,15 @@
 //Reusable Fields
 const getSellFields = function () {
   let fields = [];
+  var now = new Date();
   for (var i = 2; i < 14; i++) {
     fields.push($("#sell_" + i)[0]);
+    if (i == now.getDay() * 2 + (now.getHours() >= 12 ? 1 : 0)) {
+      fields[fields.length - 1].classList.add("now");
+    }
+  }
+  if (now.getDay() == 0) {
+    buy_input[0].classList.add("now");
   }
   return fields;
 };
@@ -40,8 +47,8 @@ const state = {
   initialized: false,
 };
 
-const sell_inputs = getSellFields();
 const buy_input = $("#buy");
+const sell_inputs = getSellFields();
 const first_buy_radios = getFirstBuyRadios();
 const previous_pattern_radios = getPreviousPatternRadios();
 const permalink_input = $('#permalink-input');
@@ -281,15 +288,27 @@ const displayPercentage = function(fraction) {
   }
 };
 
+const hideChart = function() {
+  $("#output").html("");
+  $(".chart-wrapper").hide()
+}
+
 const calculateOutput = function (data, first_buy, previous_pattern) {
   if (isEmpty(data)) {
-    $("#output").html("");
+    hideChart()
     return;
   }
   let pat_desc = {0:"fluctuating", 1:"large-spike", 2:"decreasing", 3:"small-spike", 4:"all"};
   let output_possibilities = "";
   let predictor = new Predictor(data, first_buy, previous_pattern);
   let analyzed_possibilities = predictor.analyze_possibilities();
+  if (analyzed_possibilities[0].weekGuaranteedMinimum === Number.POSITIVE_INFINITY) {
+    hideChart()
+    $(".error:hidden").show()
+    return;
+  }
+  $(".error:visible").hide()
+  $(".chart-wrapper:hidden").show()
   let buy_price = parseInt(buy_input.val());
   previous_pattern_number = "";
   for (let poss of analyzed_possibilities) {

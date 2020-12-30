@@ -54,6 +54,9 @@
   --input-focus-bg-color: white;
   --input-focus-text-color: var(--color-blue);
 
+  --input-now-bg-color: var(--dialog-name-bg-color);
+  --input-now-text-color: var(--dialog-name-text-color);
+
   --button-text-color: var(--nook-phone-text-color);
   --button-reset-text-color: #E45B5B;
 
@@ -244,6 +247,10 @@ h2 {
   border-radius: 40px;
 }
 
+.dialog-box.error {
+  display: none;
+}
+
 .input__form {
   background: var(--center-bg-color);
   display: flex;
@@ -335,6 +342,7 @@ input[type=number]:not(:placeholder-shown) {
 
 input[type=number]:placeholder-shown:hover {
   cursor: pointer;
+  background: var(--radio-hover-bg-color);
   transform: scale(1.1);
   box-shadow: 0 1px 6px var(--shadow-5), 0 3px 6px var(--shadow-9);
 }
@@ -412,6 +420,14 @@ input[type=number] {
   color: var(--radio-checked-text-color);
 }
 
+input[class=now]:placeholder-shown {
+  background: var(--input-now-bg-color);
+}
+
+input[class=now]:placeholder-shown::placeholder {
+  color: var(--input-now-text-color);
+}
+
 .button {
   color: var(--button-text-color);
   font-family: inherit;
@@ -429,6 +445,7 @@ input[type=number] {
 .button:hover {
   transform: scale(1.1);
   cursor: pointer;
+  background: var(--radio-hover-bg-color);
   opacity: 1;
   box-shadow: 0 1px 6px var(--shadow-5), 0 3px 6px var(--shadow-9);
 }
